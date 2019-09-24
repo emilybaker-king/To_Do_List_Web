@@ -26,6 +26,18 @@ function createListElement() {
     }
 
     li.addEventListener("click", markDone);
+
+    //Create the delete button that will be added to our list item
+    var deleteButton = document.createElement("button");
+    deleteButton.innerText = "X";
+    li.appendChild(deleteButton);
+
+    //Function will be called whenever the delete button is clicked
+    function deleteListItem() {
+        li.classList.add("delete");
+    }
+
+    deleteButton.addEventListener("click", deleteListItem);
 }
 
 //This is going to create a list element when the submit button is tapped
